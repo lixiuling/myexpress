@@ -1,0 +1,171 @@
+#@SwitchHosts! {"url": null, "icon_idx": 0, "title": "\u5f53\u524d\u7cfb\u7edf hosts"}
+##
+# Host Database
+#
+# localhost is used to configure the loopback interface
+# when the system is booting.  Do not change this entry.
+##
+127.0.0.1	localhost
+255.255.255.255	broadcasthost
+::1             localhost 
+
+#57测试SHEIN
+#50.23.190.57 shein.ltwebstatic.com
+50.23.190.57 shein.shesz1.com  
+50.23.190.57 shein_m.shesz1.com
+50.23.190.57 www.shesz1.com
+50.23.190.57 us.shesz1.com
+50.23.190.57 es.shesz1.com
+50.23.190.57 fr.shesz1.com
+50.23.190.57 ru.shesz1.com
+50.23.190.57 de.shesz1.com
+50.23.190.57 it.shesz1.com
+50.23.190.57 ar.shesz1.com
+50.23.190.57 au.shesz1.com
+50.23.190.57 m.shesz1.com
+
+50.23.190.57 shein.shesz2.com
+50.23.190.57 shein_m.shesz2.com
+50.23.190.57 www.shesz2.com
+50.23.190.57 us.shesz2.com
+50.23.190.57 es.shesz2.com
+50.23.190.57 fr.shesz2.com
+50.23.190.57 ru.shesz2.com
+50.23.190.57 de.shesz2.com
+50.23.190.57 it.shesz2.com
+50.23.190.57 ar.shesz2.com
+50.23.190.57 au.shesz2.com
+50.23.190.57 m.shesz2.com
+50.23.190.57 app.shesz2.com
+
+50.23.190.57 shein.shesz4.com
+50.23.190.57 shein_m.shesz4.com
+50.23.190.57 www.shesz4.com
+50.23.190.57 us.shesz4.com
+50.23.190.57 es.shesz4.com
+50.23.190.57 fr.shesz4.com
+50.23.190.57 ru.shesz4.com
+50.23.190.57 de.shesz4.com
+50.23.190.57 it.shesz4.com
+50.23.190.57 ar.shesz4.com
+50.23.190.57 au.shesz4.com
+50.23.190.57 m.shesz4.com
+
+
+#57测试ROMWE
+#50.23.190.57 romwe.ltwebstatic.com
+50.23.190.57 romwe.shesz1.com
+50.23.190.57 romwe_m.shesz1.com
+50.23.190.57 rw.shesz1.com
+50.23.190.57 rwes.shesz1.com
+50.23.190.57 rwfr.shesz1.com
+50.23.190.57 rwde.shesz1.com
+50.23.190.57 rwm.shesz1.com
+50.23.190.57 rwios.shesz1.com
+
+50.23.190.57 romwe.shesz2.com
+50.23.190.57 romwe_m.shesz2.com
+50.23.190.57 rw.shesz2.com
+50.23.190.57 rwes.shesz2.com
+50.23.190.57 rwfr.shesz2.com
+50.23.190.57 rwde.shesz2.com
+50.23.190.57 rwm.shesz2.com
+50.23.190.57 rwios.shesz2.com
+
+50.23.190.57 romwe.shesz3.com
+50.23.190.57 romwe_m.shesz3.com
+50.23.190.57 rw.shesz3.com
+50.23.190.57 rwes.shesz3.com
+50.23.190.57 rwfr.shesz3.com
+50.23.190.57 rwde.shesz3.com
+50.23.190.57 rwm.shesz3.com
+50.23.190.57 rwios.shesz3.com
+
+50.23.190.57 romwe.shesz4.com
+50.23.190.57 romwe_m.shesz4.com
+50.23.190.57 rw.shesz4.com
+50.23.190.57 rwes.shesz4.com
+50.23.190.57 rwfr.shesz4.com
+50.23.190.57 rwde.shesz4.com
+50.23.190.57 rwm.shesz4.com
+50.23.190.57 rwios.shesz4.com
+
+
+#57测试EMC
+50.23.190.57 emmacloth.shesz1.com
+50.23.190.57 emmacloth_m.shesz1.com
+50.23.190.57 ec.shesz1.com
+50.23.190.57 eces.shesz1.com
+50.23.190.57 ecfr.shesz1.com
+50.23.190.57 ecde.shesz1.com
+50.23.190.57 ecm.shesz1.com
+
+50.23.190.57 emmacloth.shesz2.com
+50.23.190.57 emmacloth_m.shesz2.com
+50.23.190.57 ec.shesz2.com
+50.23.190.57 eces.shesz2.com
+50.23.190.57 ecfr.shesz2.com
+50.23.190.57 ecde.shesz2.com
+50.23.190.57 ecm.shesz2.com
+
+50.23.190.57 emmacloth.shesz4.com
+50.23.190.57 emmacloth_m.shesz4.com
+50.23.190.57 ec.shesz4.com
+50.23.190.57 eces.shesz4.com
+50.23.190.57 ecfr.shesz4.com
+50.23.190.57 ecde.shesz4.com
+50.23.190.57 ecm.shesz4.com
+
+#57测试MMC
+50.23.190.57 mmc.shesz1.com
+50.23.190.57 mmc_m.shesz1.com
+50.23.190.57 em.shesz1.com 
+50.23.190.57 mmcm.shesz1.com
+
+50.23.190.57 mmc.shesz2.com
+50.23.190.57 mmc_m.shesz2.com
+50.23.190.57 em.shesz2.com
+50.23.190.57 mmcm.shesz2.com
+
+50.23.190.57 mmc.shesz4.com
+50.23.190.57 mmc_m.shesz4.com
+50.23.190.57 em.shesz4.com
+50.23.190.57 mmc.shesz4.com
+
+#灰度-shein
+50.23.190.36 www.shein.com
+50.23.190.36 us.shein.com
+50.23.190.36 es.shein.com
+50.23.190.36 sheinsz.shein.fr
+50.23.190.36 fr.shein.com
+50.23.190.36 ru.shein.com
+50.23.190.36 de.shein.com
+50.23.190.36 android.shein.com
+50.23.190.36 ar.shein.com
+50.23.190.36 it.shein.com
+173.192.180.211 www.grey_deploy.com
+#50.23.190.38 m.shein.com
+#50.23.190.38 app.shein.com
+50.23.190.38 shein.srmdata.com
+50.23.148.93  www.mywayec.org
+
+#SHEIN-M新站
+50.23.151.42  api.shein.com
+50.23.151.47  api.shein.com
+#50.23.190.36 m.shein.com
+#45.79.101.131 m.shein.com
+
+
+50.23.190.57 app.shesz1.com
+50.23.190.57 shein.ltwebstatic.com
+50.23.190.57 www.mywayectest.org
+50.23.190.50 www.lingtianadmin.org
+50.23.190.57 uk.sheproduct.com
+
+#南京
+50.23.190.57 rw.shetest.cn
+50.23.190.57 rwes.shetest.cn
+50.23.190.57 rwfr.shetest.cn
+50.23.190.57 rwm.shetest.cn
+50.23.190.57 romwe.shetest.cn
+50.23.190.57 romwe_m.shetest.cn

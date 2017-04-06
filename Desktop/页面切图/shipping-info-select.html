@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SELECT SHIPPING INFO</title>
+	<style type="text/css">
+		.select-box {position: relative;font-size: 12px; }
+		.select-box .select-item {position: relative;width: 320px;height: 40px;border: 1px solid #666;box-sizing: border-box;padding: 10px 10px; }
+		.select-box .select-item:hover {cursor: pointer; }
+		.select-box .select-item .arrowe-down {position: absolute;top: 14px;right: 10px;height: 0;width: 0;border-top: 10px solid #666;border-left: 7px solid transparent;border-right: 7px solid transparent; }
+		.select-box ul {list-style: none;padding: 0;margin: 0;box-sizing: border-box;width: 320px; }
+		.select-list .list-item{padding-left:0; margin-bottom: 0;}
+		.select-box .frist-title {position: absolute;top: 40px;width: 303px;z-index: 1020;border: 1px solid #ccc;background: #e5e5e5;height: 27px;line-height: 27px;padding: 0 10px;box-sizing: border-box;border-right: none;font-weight: bold;display: none; }
+		.select-box ul.select-list {display: none;height: 220px;overflow-y: scroll;overflow-x: hidden;border: 1px solid #ccc;position: absolute;top: 40px;z-index: 1011;background: #fff; }
+		.select-box ul.select-list .active-li {padding-top: 25px; }
+		.select-box ul.select-list .item-title {height: 27px;line-height: 27px;padding: 0 10px;display: block;box-sizing: border-box;text-decoration: none;background: #e5e5e5;color: #000;margin: 0;font-size: 14px; }
+		.select-box ul.select-list .item-title:hover {cursor: default; }
+		.select-box ul.select-list .active-title {position: absolute;top: 0;width: 303px;border-right: none;z-index: 10; }
+		.select-box ul.list-item li {height: 25px;line-height: 25px;padding: 0 10px; }
+		.select-box ul.list-item li:last-child {border-bottom: 1px solid #ccc; }
+		.select-box ul.list-item li:hover {cursor: pointer; font-size: 14px;font-weight: bold;border-left: 4px solid #222;}
+		.Isblock {display: block !important; }
+		.other-country-table {margin-top: 20px; }
+		.other-country-table .c-table {width: 100%;border-collapse: collapse;font-size: 12px; }
+		.other-country-table thead tr {color: #fff;background-color: #999;text-align: center; }
+		.other-country-table thead td {border: 1px solid #e9e9e9;padding: 10px; }
+		.other-country-table thead .td-back {background-color: #555; }
+		.other-country-table tbody tr {color: #666;text-align: center; }
+		.other-country-table tbody tr:nth-child(2n) {background-color: #f2f2f2; }
+		.other-country-table tbody td {border: 1px solid #e9e9e9;padding: 10px; }
+		.s-animated {-webkit-animation-duration: 1s;animation-duration: 1s;-webkit-animation-fill-mode: both;animation-fill-mode: both;}
+		@-webkit-keyframes shake {
+	        from,
+	        to {
+	            -webkit-transform: translate3d(0, 0, 0);
+	            transform: translate3d(0, 0, 0);
+	        }
+	        10%,
+	        30%,
+	        50%,
+	        70%,
+	        90% {
+	            -webkit-transform: translate3d(-6px, 0, 0);
+	            transform: translate3d(-6px, 0, 0);
+	        }
+	        20%,
+	        40%,
+	        60%,
+	        80% {
+	            -webkit-transform: translate3d(6px, 0, 0);
+	            transform: translate3d(6px, 0, 0);
+	        }
+	    }
+
+	    @keyframes shake {
+	        from,
+	        to {
+	            -webkit-transform: translate3d(0, 0, 0);
+	            transform: translate3d(0, 0, 0);
+	        }
+	        10%,
+	        30%,
+	        50%,
+	        70%,
+	        90% {
+	            -webkit-transform: translate3d(-6px, 0, 0);
+	            transform: translate3d(-6px, 0, 0);
+	        }
+	        20%,
+	        40%,
+	        60%,
+	        80% {
+	            -webkit-transform: translate3d(6px, 0, 0);
+	            transform: translate3d(6px, 0, 0);
+	        }
+	    }
+
+	    .s-shake {
+	        -webkit-animation-name: shake;
+	        animation-name: shake;
+	    }
+	</style>
+</head>
+<body style="margin:100px 0;">
+	<div style="max-width:1200px; margin:0 auto;">
+		<div class="select-box">
+			<div class="select-item" id="select-country">
+				<span>Please choose your country</span>
+				<em class="arrowe-down"></em>
+			</div>
+			<div class="frist-title">
+				<span>A</span>
+			</div>
+			<ul class="select-list" id="country-list">
+			</ul>
+		</div>
+		<div class="other-country-table">
+			<table class="c-table" id="c-select-table">
+			</table>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
+	<script type="text/javascript">
+		(function(){
+			var article = new Array();
+		
+			article['www'] = new Array();
+			article['www']['free'] = '<span style="color:#f00;">FREE</span> for orders over ';
+			article['www']['us'] = 'US$';
+			article['www']['otherwise'] = 'otherwise ';
+			article['www']['days'] = 'days ';
+			article['www']['country'] = 'COUNTRY ';
+			article['www']['standard'] = 'STANDARD ';
+			article['www']['express'] = 'EXPRESS ';
+			article['www']['expedited'] = 'EXPEDITED ';
+			article['www']['costs'] = 'COSTS ';
+			article['www']['shippingtime'] = 'SHIPPING TIME(BUSINESS DAYS) ';
+
+
+			article['au'] = new Array();
+			article['au']['free'] = 'FREE for orders over ';
+			article['au']['us'] = 'US$';
+			article['au']['otherwise'] = 'otherwise ';
+			article['au']['days'] = 'days ';
+			article['au']['country'] = 'COUNTRY ';
+			article['au']['standard'] = 'STANDARD ';
+			article['au']['express'] = 'EXPRESS ';
+			article['au']['expedited'] = 'EXPEDITED ';
+			article['au']['costs'] = 'COSTS ';
+			article['au']['shippingtime'] = 'SHIPPING TIME(BUSINESS DAYS) ';
+
+			article['uk'] = new Array();
+			article['uk']['free'] = 'FREE for orders over ';
+			article['uk']['us'] = 'US$';
+			article['uk']['otherwise'] = 'otherwise ';
+			article['uk']['days'] = 'days ';
+			article['uk']['country'] = 'COUNTRY ';
+			article['uk']['standard'] = 'STANDARD ';
+			article['uk']['express'] = 'EXPRESS ';
+			article['uk']['expedited'] = 'EXPEDITED ';
+			article['uk']['costs'] = 'COSTS ';
+			article['uk']['shippingtime'] = 'SHIPPING TIME(BUSINESS DAYS) ';
+
+			article['fr'] = new Array();
+			article['fr']['free'] = 'Commande de plus de ';
+			article['fr']['us'] = 'US$, gratuite';
+			article['fr']['otherwise'] = 'Commande moins de ';
+			article['fr']['days'] = 'jours ouvrables ';
+			article['fr']['country'] = 'PAYS ';
+			article['fr']['standard'] = 'LIVRAISON "STANDARD" ';
+			article['fr']['express'] = 'LIVRAISON "EXPRESS" ';
+			article['fr']['expedited'] = 'Accélérée';
+			article['fr']['costs'] = 'COÛTS ';
+			article['fr']['shippingtime'] = 'DÉLAI DELIVRAISON(JOURS OUVRÉS) ';
+
+
+			article['es'] = new Array();
+			article['es']['free'] = 'GRATIS para los pedidos a partir de ';
+			article['es']['us'] = 'US$';
+			article['es']['otherwise'] = 'lo contrario ';
+			article['es']['days'] = ' días';
+			article['es']['country'] = 'PAÍS ';
+			article['es']['standard'] = 'ENVÍO ESTÁNDAR ';
+			article['es']['express'] = 'ENVÍO EXPRESS ';
+			article['es']['expedited'] = 'APRESURADO ';
+			article['es']['costs'] = 'GASTOS ';
+			article['es']['shippingtime'] = 'TIEMPOS DE ENTREGA(DÍAS LABORALES) ';
+
+			article['it'] = new Array();
+			article['it']['free'] = 'Gratuito con ordine oltre ';
+			article['it']['us'] = 'US$';
+			article['it']['otherwise'] = 'altrimenti ';
+			article['it']['days'] = ' giorni';
+			article['it']['country'] = 'PAESE ';
+			article['it']['standard'] = 'STANDARD SPEDIZIONE ';
+			article['it']['express'] = 'EXPRESS SPEDIZIONE ';
+			article['it']['expedited'] = 'RAPIDA';
+			article['it']['costs'] = 'COSTI ';
+			article['it']['shippingtime'] = 'TEMPO DI CONSEGNA(GIORNI LAVORATIVI) ';
+
+			article['ru'] = new Array();
+			article['ru']['free'] = 'БЕСПЛАТНАЯ при заказе от ';
+			article['ru']['us'] = 'US$';
+			article['ru']['otherwise'] = 'иначе ';
+			article['ru']['days'] = ' дней';
+			article['ru']['country'] = 'СТРАНА ';
+			article['ru']['standard'] = 'СТАНДАРТНАЯ ДОСТАВКА ';
+			article['ru']['express'] = 'ЭКСПРЕСС ДОСТАВКА ';
+			article['ru']['expedited'] = 'УСКОРЕННАЯ ';
+			article['ru']['costs'] = 'РАСХОДЫ ';
+			article['ru']['shippingtime'] = 'ВРЕМЯ ДОСТАВКИ(РАБОЧИЕ ДНИ) ';
+
+			article['de'] = new Array();
+			article['de']['free'] = 'FREI für Bestellug über ';
+			article['de']['us'] = 'US$';
+			article['de']['otherwise'] = 'sonst ';
+			article['de']['days'] = ' Tage';
+			article['de']['country'] = 'LAND ';
+			article['de']['standard'] = 'STANDARDVERSAND ';
+			article['de']['express'] = 'EXPRESSVERSAND ';
+			article['de']['expedited'] = 'BESCHLEUNIGTER ';
+			article['de']['costs'] = 'KOSTEN ';
+			article['de']['shippingtime'] = 'Lieferzeit(WERKTAGE) ';
+
+			var country = window.location.href.slice(7, 9) === 'ww' ? 'www' : window.location.href.slice(7, 9);
+			var countryTitle = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+			var countryListHtml = '';
+			$.ajax({
+				type: 'POST',
+				dataType: 'json',
+				url: 'http://www.shesz1.com/index.php',
+				data: 'model=article&action=shipping_info',
+				success:function(json){
+					//按首字母顺序取国家值放入select列表
+					var countryList = [];
+					var countryObj = [];
+					for(var countryItem in json.info){
+						countryList.push(countryItem);
+						countryObj.push(json.info[countryItem]);
+					}
+					for(var i=0;i<countryTitle.length;i++){
+						if(i===0){
+							countryListHtml +='<li class="list active-li" id="list_'+ i+'">'
+							countryListHtml +='<h6 class="item-title active-title">' + countryTitle[i] +'</h6>'
+						}else{
+							countryListHtml +='<li class="list" id="list_'+ i+'">'
+							countryListHtml +='<h6 class="item-title">' + countryTitle[i] +'</h6>'
+						}						
+						countryListHtml +='<ul class="list-item">'
+						for(var j=0;j<countryList.length;j++){
+							var firstLetter = countryList[j].slice(0,1);
+							if(firstLetter === countryTitle[i]){
+								countryListHtml +='<li>'+ countryList[j] + '</li>'
+							}
+						}
+						countryListHtml +='</ul></li>'
+					}
+					$("#country-list").html(countryListHtml);
+
+					//某个首字母不存在国家是 隐藏
+					$(".list-item").each(function(){
+						if($(this).find("li").length<1){
+							$(this).siblings(".item-title").hide()
+						}
+					})
+					
+					//选取国家
+					$(".list-item li").click(function() {
+						$this=$(this);
+						$("#country-list").hide();
+						$(".frist-title").hide();
+						$("#select-country span").html($this.html());
+
+						//table取值
+						var countryName = $this.html();
+						for(var k=0;k<countryObj.length;k++){
+							if(countryName===countryList[k]){
+								var shippingItem = [];
+								for(var shippingList in countryObj[k]){
+									shippingItem.push(countryObj[k][shippingList]);
+								}
+								tableListHtml ='';
+								//us有三种快递方式，其他国家两种快递方式
+								if(shippingItem.length===3){
+									tableListHtml +='<thead class="c-thead"><tr>'
+									tableListHtml +='<td rowspan="2">'+ article['www']['country'] +'</td>'
+									tableListHtml +='<td colspan="2" class="td-back">'+ article['www']['standard'] +'</td>'
+									tableListHtml +='<td colspan="2" class="td-back">'+ article['www']['expedited'] +'</td>'
+									tableListHtml +='<td colspan="2" class="td-back">'+ article['www']['express'] +'</td></tr>'
+									tableListHtml +='<tr><td>'+ article['www']['costs'] + '</td>'
+									tableListHtml +='<td>'+ article['www']['shippingtime'] + '</td>'
+									tableListHtml +='<<td>'+ article['www']['costs'] + '</td>'
+									tableListHtml +='<td>'+ article['www']['shippingtime'] + '</td>'
+									tableListHtml +='<td>'+ article['www']['costs'] + '</td>'
+									tableListHtml +='<td>'+ article['www']['shippingtime'] + '</td>'
+									tableListHtml +='</tr></thead>'
+								}else{
+									tableListHtml +='<thead class="c-thead"><tr>'
+									tableListHtml +='<td rowspan="2">'+ article['www']['country'] +'</td>'
+									tableListHtml +='<td colspan="2" class="td-back">'+ article['www']['standard'] +'</td>'
+									tableListHtml +='<td colspan="2" class="td-back">'+ article['www']['express'] +'</td></tr>'
+									tableListHtml +='<tr><td>'+ article['www']['costs'] + '</td>'
+									tableListHtml +='<td>'+ article['www']['shippingtime'] + '</td>'
+									tableListHtml +='<<td>'+ article['www']['costs'] + '</td>'
+									tableListHtml +='<td>'+ article['www']['shippingtime'] + '</td>'
+									tableListHtml +='</tr></thead>'
+								}
+								tableListHtml += '<tbody class="c-tbody"><tr>'
+								tableListHtml += '<td>'+ countryList[k] + '</td>'
+								for(var d=0;d<shippingItem.length;d++){
+									tableListHtml +='<td>'+ article['www']['free'] + article['www']['us'] + shippingItem[d].full_amount + ',' +article['www']['otherwise'] + article['www']['us'] + shippingItem[d].starting_price +'</td>'
+									tableListHtml +='<td>'+ shippingItem[d].shipping_time +' '+ article['www']['days'] +'</td>'
+								}
+								tableListHtml += '</tr></tbody>'
+							}
+						}
+						$("#c-select-table").html(tableListHtml);
+						$('#c-select-table').removeClass('s-animated s-shake').addClass('s-animated s-shake').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+	        					$(this).removeClass('s-animated s-shake');
+	        				});
+
+					});
+				}
+			})
+  			
+			
+
+			$("#select-country").click(function(e) {
+				e.stopPropagation();
+				$("#country-list").slideToggle("fast",function(){
+					if($("#country-list").is(":visible")){
+						$(".frist-title").show();
+					}else{
+						$(".frist-title").hide();
+					}
+				});
+			});
+			$("body").click(function() {
+				$("#country-list").hide();
+				$(".frist-title").hide();
+			});
+            //监听滚动 实现列表滚动对应title悬停
+  			var CtoTopheight = $("#select-country").offset().top;
+			$("#country-list").bind("scroll",function(){
+				var hTltle = $(".item-title");
+				for (var i=0;i<hTltle.length;i++) {
+					var toTopheight = $('#list_'+ i).offset().top;
+					if (toTopheight-CtoTopheight<65) {
+						$this=$('#list_'+ i);
+						$this.siblings('.list').removeClass('active-li');
+						$this.siblings('.list').find('.item-title').removeClass('active-title');
+						$this.addClass('active-li');
+						$this.find('.item-title').addClass('active-title');
+						$(".frist-title").find('span').html(countryTitle[i]);
+					}
+				}
+			})
+
+		})();
+	</script>
+
+</body>
+</html>

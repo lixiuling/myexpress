@@ -1,0 +1,112 @@
+.select-box {
+  position: relative;
+  font-size: 12px; }
+  .select-box .select-item {
+    position: relative;
+    width: 320px;
+    height: 40px;
+    border: 1px solid #666;
+    box-sizing: border-box;
+    padding: 10px 10px; }
+    .select-box .select-item:hover {
+      cursor: pointer; }
+    .select-box .select-item .arrowe-down {
+      position: absolute;
+      top: 14px;
+      right: 10px;
+      height: 0;
+      width: 0;
+      border-top: 10px solid #666;
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent; }
+  .select-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    width: 320px; }
+  .select-box .frist-title {
+    position: absolute;
+    top: 40px;
+    width: 303px;
+    z-index: 20;
+    border: 1px solid #ccc;
+    background: #e5e5e5;
+    height: 27px;
+    line-height: 27px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    border-right: none;
+    font-weight: bold;
+    display: none; }
+  .select-box ul.select-list {
+    display: none;
+    height: 220px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border: 1px solid #ccc;
+    position: absolute;
+    top: 40px;
+    z-index: 10;
+    background: #fff; }
+    .select-box ul.select-list .active-li {
+      padding-top: 25px; }
+    .select-box ul.select-list .item-title {
+      height: 27px;
+      line-height: 27px;
+      padding: 0 10px;
+      border: 1px solid #ccc;
+      border-bottom: none;
+      border-top: none;
+      display: block;
+      box-sizing: border-box;
+      text-decoration: none;
+      background: #e5e5e5;
+      color: #000;
+      margin: 0;
+      font-size: 14px; }
+      .select-box ul.select-list .item-title:hover {
+        cursor: default; }
+    .select-box ul.select-list .active-title {
+      position: absolute;
+      top: 0;
+      width: 303px;
+      border-right: none;
+      z-index: 10; }
+  .select-box ul.list-item li {
+    height: 25px;
+    line-height: 25px;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+    border-bottom: none; }
+    .select-box ul.list-item li:last-child {
+      border-bottom: 1px solid #ccc; }
+    .select-box ul.list-item li:hover {
+      cursor: pointer; }
+
+.Isblock {
+  display: block !important; }
+
+.other-country-table {
+  margin-top: 20px; }
+  .other-country-table .c-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px; }
+  .other-country-table thead tr {
+    color: #fff;
+    background-color: #999;
+    text-align: center; }
+  .other-country-table thead td {
+    border: 1px solid #e9e9e9;
+    padding: 10px; }
+  .other-country-table thead .td-back {
+    background-color: #555; }
+  .other-country-table tbody tr {
+    color: #666;
+    text-align: center; }
+    .other-country-table tbody tr:nth-child(2n) {
+      background-color: #f2f2f2; }
+  .other-country-table tbody td {
+    border: 1px solid #e9e9e9;
+    padding: 10px; }

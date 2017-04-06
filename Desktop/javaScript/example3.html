@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>寄生组合式继承</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function SuperType(name){
+			this.name = name;
+			this.colors = ["red","blue","green"];
+		}
+
+		SuperType.prototype.sayName = function(){
+			alert(this.name);
+		}
+
+		function SubType(name,age){
+			SuperType.call(this,name);
+			this.age = age;
+		}
+
+		function inheritPrototype(son,parent){
+			var prototype = Object(parent.prototype); //创建对象
+			prototype.constructor = son; //增强对象
+			son.prototype = prototype; //指定对象
+		}
+
+		inheritPrototype(SubType,SuperType);
+
+		SubType.prototype.sayAge = function(){
+			alert(this.age);
+		}
+
+		var ex1 = new SubType("LiXiulings",27);
+		ex1.colors.push(["yellow","black"]);
+		alert(ex1.colors);
+		ex1.sayName();
+		ex1.sayAge();
+
+	</script>
+</body>
+</html>

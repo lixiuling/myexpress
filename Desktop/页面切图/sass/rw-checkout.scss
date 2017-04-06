@@ -1,0 +1,565 @@
+@charset "utf-8";
+@font-face {
+    font-family: GOTHIC;
+    src: url(../image/GOTHIC.TTF) format("truetype");
+}
+
+@font-face {
+    font-family: GOTHIC_b;
+    src: url(../image/GOTHIC_b.TTF) format("truetype");
+}
+
+body {
+    margin: 0;
+    font-family: GOTHIC;
+}
+
+.rw-radio {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    outline: none;
+    vertical-align: middle;
+    appearance: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    &:hover {
+        cursor: pointer;
+    }
+    &:checked {
+        background: #3998fc;
+        border: none;
+        &:after {
+            background: #fff;
+            content: '';
+            display: block;
+            width: 4px;
+            height: 4px;
+            border: 1px solid #fff;
+            border-radius: 50%;
+            position: absolute;
+            top: 34%;
+            left: 34%;
+        }
+    }
+}
+
+.rw-checkbox {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    vertical-align: middle;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    &:hover {
+        cursor: pointer;
+    }
+    &:checked {
+        background: #3998fc;
+        border: none;
+        &:after {
+            content: '';
+            width: 8px;
+            height: 4px;
+            border-left: 2px solid #fff;
+            border-bottom: 2px solid #fff;
+            transform: rotate(-45deg);
+            position: absolute;
+            top: 20%;
+            left: 20%;
+        }
+    }
+}
+
+.rw-button {
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 10px;
+    background: #1b1b1b;
+    color: #fff;
+    border: 1px solid #1b1b1b;
+    text-align: center;
+    font-size: 16px;
+    font-family: altgot2n, arial;
+}
+
+.main-content {
+    width: 960px;
+    margin: 0 auto;
+}
+
+.checkout-item {
+    margin-top: 56px;
+    color: #1b1b1b;
+    a {
+        color: #333;
+        text-decoration: none;
+    }
+    h2 {
+        font-family: GOTHIC_b;
+        position: relative;
+        font-size: 18px;
+        background: #fafafa;
+        margin: 0;
+        padding: 0 20px;
+        line-height: 40px;
+        box-shadow: 0 4px #e1e1e1;
+        text-transform: capitalize;
+        .goods-edit {
+            position: absolute;
+            right: 0;
+            top: 5px;
+        }
+    }
+    table {
+        font-family: GOTHIC_b;
+        font-size: 14px;
+        width: 100%;
+        text-align: center;
+        thead {
+            th {
+                line-height: 55px;
+                border-bottom: 1px dashed #e2e2e2;
+                text-transform: capitalize;
+                box-sizing: border-box;
+                &:nth-child(2) {
+                    width: 270px;
+                }
+            }
+        }
+        tbody {
+            td {
+                position: relative;
+                padding: 15px;
+                border-bottom: 1px dashed #e2e2e2;
+                box-sizing: border-box;
+                &:nth-child(2) {
+                    width: 270px;
+                }
+            }
+        }
+    }
+    .td-picture {
+        img {
+            width: 90px;
+            height: 120px;
+        }
+    }
+    .td-name {
+        a {
+            color: #333;
+            text-decoration: none;
+            display: block;
+            padding-bottom: 20px;
+        }
+    }
+    .rw-dispatch {
+        display: inline-block;
+        line-height: 21px;
+        background: #333;
+        color: #fff;
+        padding: 0 5px;
+        i {
+            margin-right: 5px;
+        }
+        &:before {
+            position: absolute;
+            left: 45px;
+            content: '';
+            border-top: 11px solid transparent;
+            border-right: 11px solid #333;
+            border-bottom: 11px solid transparent;
+        }
+    }
+    .td-price {
+        span {
+            display: block;
+        }
+        del {
+            display: block;
+            margin: 15px 0;
+            color: #999;
+        }
+    }
+    .td-totleprice {
+        color: #e60012;
+    }
+    .h2-right {
+        position: absolute;
+        right: 20px;
+        font-family: GOTHIC;
+        font-size: 14px;
+        display: inline;
+        .address-add {
+            margin-right: 60px;
+            i {
+                font-weight: bold;
+                color: #000;
+            }
+        }
+    }
+    .message-input {
+        width: 100%;
+        height: 54px;
+        line-height: 54px;
+        box-sizing: border-box;
+        border: none;
+        padding: 0 17px;
+        border-bottom: 1px dashed #e2e2e2;
+        color: #999;
+        font-family: GOTHIC;
+        &:focus {
+            border: none;
+            border-bottom: 1px solid #000;
+            outline: none;
+            color: #1b1b1b;
+        }
+    }
+    .checkout-price {
+        padding: 15px 0;
+        text-align: right;
+        font-size: 18px;
+        border-bottom: 1px dashed #e2e2e2;
+    }
+    .price-item {
+        span {
+            display: inline-block;
+            line-height: 32px;
+            &:first-child {
+                width: 200px;
+                text-align: left;
+                margin-right: 20px;
+            }
+            &:nth-child(2) {
+                width: 100px;
+                font-family: GOTHIC_b
+            }
+        }
+    }
+    .checkout-button{
+        text-align: right;
+        margin-top: 24px;
+        margin-bottom: 32px;
+        button.rw-button{
+            width: 248px;
+            height: 44px;
+            line-height: 44px;
+            background: #000;
+        }
+    }
+}
+
+.select-list {
+    padding-top: 28px;
+    font-size: 14px;
+    .list-item {
+        position: relative;
+        padding-left: 15px;
+        margin-bottom: 25px;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    label {
+        display: inline-block;
+        margin-right: 21px;
+        line-height: 14px;
+        p {
+            margin: 0;
+            padding: 5px 0;
+        }
+        .address-edit {
+            position: absolute;
+            right: 0;
+            top: 2px;
+        }
+        .shipping-price {
+            position: absolute;
+            right: 0;
+            top: 5px;
+            font-family: GOTHIC_b;
+        }
+    }
+    .free-shipping-tip {
+        padding: 10px 0 10px 59px;
+        border-top: 1px dashed #e2e2e2;
+        border-bottom: 1px dashed #e2e2e2;
+        margin-bottom: 10px;
+        label {
+            margin-right: 15px;
+        }
+        img {
+            width: 30px;
+            height: 10px;
+        }
+    }
+    .payment-credit {
+        img {
+            vertical-align: middle;
+            width: 706px;
+            height: 35px;
+        }
+    }
+    .payment-paypal {
+        img {
+            vertical-align: middle;
+            width: 53px;
+            height: 32px;
+            margin: 0 9px;
+        }
+    }
+    .coupon-fb,
+    .coupon-apply {
+        label {
+            display: block;
+            float: left;
+            padding-top: 5px;
+        }
+        &:after {
+            clear: both;
+            content: '';
+            display: block;
+        }
+    }
+}
+
+.shipping-insurance {
+    .list-item {
+        padding-left: 68px;
+        margin-bottom: 20px;
+        label {
+            margin-right: 21px;
+        }
+        .insurance-tip {
+            position: relative;
+            color: #999;
+            text-decoration: underline;
+            margin-left: 16px;
+            &:hover {
+                cursor: pointer;
+                .insurance-tip-con {
+                    display: block;
+                }
+            }
+        }
+        .insurance-tip-con {
+            position: absolute;
+            top: 25px;
+            right: 0;
+            z-index: 10;
+            display: none;
+            background: #fff;
+            box-sizing: border-box;
+            padding: 10px;
+            border: 1px solid #ccc;
+            width: 300px;
+            font-size: 12px;
+            font-style: normal;
+            color: #666;
+            line-height: 20px;
+            &:after {
+                position: absolute;
+                top: -6px;
+                right: 16px;
+                content: '';
+                width: 10px;
+                height: 10px;
+                background: #fff;
+                border-left: 1px solid #ccc;
+                border-top: 1px solid #ccc;
+                transform: rotate(45deg);
+            }
+        }
+        .insurance-price {
+            position: absolute;
+            right: 0;
+            top: 5px;
+            font-family: GOTHIC_b;
+        }
+    }
+    .arrive-info {
+        color: #e60012;
+        img {
+            position: relative;
+            left: -20px;
+            display: block;
+            width: 910px;
+            height: 124px;
+            margin-top: 5px;
+        }
+    }
+}
+
+.coupon-fb {
+    .fb-con {
+        margin-right: 0;
+        width: 96%;
+        p {
+            padding: 0;
+        }
+        .fb-con-t {
+            font-weight: bold;
+        }
+        .fb-con-p {
+            padding-top: 5px;
+            line-height: 40px;
+            em {
+                font-style: normal;
+                color: #e60012;
+            }
+        }
+    }
+    .fb-btn {
+        float: right;
+        button.rw-button {
+            width: 193px;
+            font-size: 14px;
+            background-color: #4965b5;
+            border: none;
+            i {
+                font-size: 28px;
+                vertical-align: middle;
+            }
+            &:hover {
+                background-color: #2b458e;
+            }
+        }
+    }
+}
+
+.coupon-apply {
+    .apply-con {
+        margin-right: 0;
+        width: 96%;
+        p {
+            padding: 0;
+        }
+        .apply-con-t {
+            font-weight: bold;
+        }
+    }
+    .coupon {
+        margin-top: 14px;
+    }
+    .code {
+        margin-right: 70px;
+    }
+    .coupon-item {
+        display: inline-block;
+        .item {
+            margin-top: 9px;
+        }
+        input.item-input {
+            width: 269px;
+            height: 40px;
+            padding: 0 10px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        input.rw-button {
+            width: 133px;
+            font-size: 16px;
+            text-transform: uppercase;
+        }
+    }
+}
+.romwe-mask{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.4;
+    display: none;
+}
+.rw-mask-con{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -250px;
+    margin-top: -130px;
+    z-index: 110;
+    width: 500px;
+    height: 260px;
+    background: #fff;
+    text-align: center;
+    .close-icon{
+        text-align: right;
+        font-size: 24px;
+        i{
+            display: inline-block;
+            padding: 10px;
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+    h2.con-title{
+        font-size: 28px;
+        margin: 20px 0;
+        font-weight: bold;
+    }
+    p.con-info{
+        margin: 20px 20px;
+    }
+    .con-button{
+        margin-top: 33px;
+        button{
+            width: 100%;
+            height: 65px;
+            background: #fff;
+            border: 1px solid #e5e5e5;
+            font-family: GOTHIC_b;
+            font-size: 22px;
+            font-weight: bold;
+            text-align: center;
+            padding: 0;
+            outline: none;
+            float: left;
+            &:hover{
+                cursor: pointer;
+            }
+        }
+        &:after{
+            clear: both;
+            content: '';
+            display: block;
+        }
+    }
+}
+.rw-share-less{
+    background:url(../image/rw-fenxiang2.png);
+    background-size: contain;
+    display: none;
+}
+.rw-share-success{
+    background:url(../image/rw-fenxiang1.png);
+    background-size: contain;
+    display: none;
+}
+.rw-share-failed{
+    background:url(../image/rw-fenxiang2.png);
+    background-size: contain;
+    display: none;
+}
