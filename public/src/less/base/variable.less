@@ -1,0 +1,108 @@
+//========== 栅格系统 START ==========
+@screen-xs                 : 480px;
+@screen-xs-min             : @screen-xs;
+@screen-phone              : @screen-xs-min;
+
+@screen-sm                 : 768px;
+@screen-sm-min             : @screen-sm;
+@screen-tablet             : @screen-sm-min;
+
+@screen-md                 : 992px;
+@screen-md-min             : @screen-md;
+@screen-desktop            : @screen-md-min;
+
+@screen-lg                 : 1200px;
+@screen-lg-min             : @screen-lg;
+@screen-lg-desktop         : @screen-lg-min;
+
+@screen-xs-max             : (@screen-sm-min - 1);
+@screen-sm-max             : (@screen-md-min - 1);
+@screen-md-max             : (@screen-lg-min - 1);
+
+@grid-columns              : 12;
+@grid-gutter-width         : 20px;
+
+
+//========== 栅格系统 END ==========
+
+//========== 基本色、排版 START ==========
+@white                 : #fff;
+
+@black1                : #222;
+@black2                : #333;
+@black3                : #666;
+@black4                : #999;
+
+@grey1                 : #ccc;
+@grey2                 : #e5e5e5;
+@grey3                 : #f5f5f5;
+@grey4                 : #fafafa;
+
+@red1                   : #E64545;
+@red2                  : #ff0000;
+@red3                  : #d10000;
+@red4                  : #ff696e;
+
+@address-red           : #F07474;
+@orange                : #F56262;
+@green                 : #5EBD66;
+@blue-fb               : #4A90E2;
+@blue-vk               : #4D75A3;
+@blue-size             : #0069d9;
+@blue-ticket           : #3399FF;
+
+@yellow-bg             : #faf7e7;
+
+@green                 : #83B293;
+@green-ticket		   : #5FBD67;
+
+@pink                  : #E64545;
+
+@font-size-1           : 36px;
+@font-size-2           : 30px;
+@font-size-3           : 24px;
+@font-size-4           : 18px;
+@font-size-5           : 14px;
+@font-size-6           : 12px;
+
+@font-size-7           : 16px;
+@font-size-8           : 20px;
+
+@line-height-p         : 1.2;
+
+@font-family           : "Arial", "Helvetica", sans-serif!important;
+
+
+@bg-color              : @white;
+@text-color            : @black1;
+@text-font-size        : @font-size-6;
+
+@link-color            : @black3;
+@link-hover-color      : @black1;
+@link-disabled-color   : @grey2;
+
+//========== 基本色、排版 END ==========
+
+//========== Z-index master list ==========
+
+/* -10~-99 两位负数 预留 内容区间*/
+/* ... */
+
+/* 10~99 两位数 内容区间*/
+@zindex-swiper-arrow       : 12;
+@zindex-dropdown           : 40;   /* 内容区的dropdown下拉菜单 */
+@zindex-hover              : 40;   /* hover 标签元素 */
+@zindex-hover-tip          : 50;    /* hover 内容显示*/
+
+/* 100~999 三位数 头部区间*/
+@zindex-topbanner          : 100;   /* topbanner */
+@zindex-header             : 400;   /* 头部 */
+@zindex-category           : 500;   /* nav菜单 */
+@zindex-header-dropdown    : 600;   /* 头部的dropdown下拉菜单 */
+
+
+/* 1000~9999 四位数 弹层区间*/
+@zindex-uptotop            : 3000;
+@zindex-quick-register     : 3000;   /* 快速注册弹框 */
+@zindex-modal-background   : 4000;   /* 弹出层的遮罩 */
+@zindex-modal              : 6000;   /* 对话框弹框 */

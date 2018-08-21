@@ -1,0 +1,72 @@
+/* 根据不同dpr设置不同的字体大小 */
+.font-dpr(@font-size) {
+     font-size: @font-size;
+    [data-dpr="1"] & {
+         font-size: @font-size * 0.5;
+    }
+    [data-dpr="3"] & {
+         font-size: @font-size * 1.5;
+    }
+}
+
+/* 根据不同dpr设置不同的border大小 */
+.border-dpr(@border, @type, @color) {
+     border-bottom: @border @type @color;
+    [data-dpr="1"] & {
+         border-bottom: @border * 0.5 @type @color;
+    }
+    [data-dpr="3"] & {
+          border-bottom: @border * 1.5 @type @color;
+    }
+}
+
+.flexbox {
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: flex;
+    display: -ms-flexbox;
+}
+//垂直居中
+.align-center {
+    -webkit-align-items: center;
+      -webkit-box-align: center;
+         -moz-box-align: center;
+         -ms-flex-align: center;
+               box-flex: center;
+            align-items: center;
+}
+
+//水平居中
+.pack-center {
+    -webkit-justify-content: center;
+           -webkit-box-pack: center;
+              -moz-box-pack: center;
+              -ms-flex-pack: center;
+            justify-content: center;
+}
+
+.space-between {
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    box-pack: justify;
+}
+
+.menuaction(@color){
+	background: linear-gradient(@color 100%, transparent 100%) no-repeat center bottom / 100% 10%;
+	background: -webkit-linear-gradient(@color 100%, transparent 100%) no-repeat center bottom / 100% 10%;
+	background: -moz-linear-gradient(@color 100%, transparent 100%) no-repeat center bottom / 100% 10%;
+	background: -ms-linear-gradient(@color 100%, transparent 100%) no-repeat center bottom / 100% 10%;
+	background: -o-linear-gradient(@color 100%, transparent 100%) no-repeat center bottom / 100% 10%;
+	&:hover{
+		background-size:100% 100%;
+		color: #fff;
+		letter-spacing: 2px;
+		cursor: pointer;
+	}
+}

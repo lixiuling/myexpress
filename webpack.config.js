@@ -9,9 +9,6 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 module.exports = {
     entry: {
         demo1: path.resolve(__dirname, 'src/demo1/index.js'),
-        vendor: [
-            'lodash'
-        ]
     },
     devtool: 'inline-source-map',
     devServer: {
@@ -21,9 +18,10 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin(['dist/demo1']),
-        // new webpack.ProvidePlugin({
-        //     _: 'lodash'
-        // }),
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery',
+        }),
         new UglifyJsPlugin(),
         new HtmlWebpackPlugin({
             title: 'Code Splitting'
